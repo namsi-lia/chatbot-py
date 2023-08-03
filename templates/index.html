@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name"viewport" content="width=device-width",initial-scale="1.0">
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+<style>
+body{
+    font-family:monospace;
+ }
+ h1{
+    text-align:center;
+ }
+ #chatbot{
+    margin-left:auto;
+    margin-right:auto;
+    width:40%;
+    margin-top:50px;
+ }
+ .botText{
+    font-family:monospace;
+    font-size:16px;
+    text-align:left;
+    line-height:25px;
+    color:blue;
+ }
+ #userInput{
+    margin-left:auto;
+    margin-right: auto ;
+    width:80%;
+    text-align:center;
+    margin-top:50px;
+ }
+ #textInput{
+    border-bottom:3px solid #657889;
+    font-family:monospace;
+    font-size:16px;
+ }
+ #button{
+    padding:5px;
+    font-family:monospace;
+    background:#0f4bf1;
+    font-size:16px;
+ }
+
+</style>
+
+<Title>Simmpy Chatbot</title>
+</head>
+<body>
+<h1>Chatbot App</h1>
+<div>
+<div id="chatbot">
+<p class="botText"><span>Hi there!</span></p>
+</div>
+<div id ="userInput">
+    <input id ="textInput" type="text" name="UserMessage" placeholder="Enter your message"/>
+    <input id= "button" type="submit" value="Send"/>
+</div>
+</body>
+</html>
