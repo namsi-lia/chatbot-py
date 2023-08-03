@@ -54,9 +54,39 @@ body{
 <div id="chatbot">
 <p class="botText"><span>Hi there!</span></p>
 </div>
-<div id ="userInput">
-    <input id ="textInput" type="text" name="UserMessage" placeholder="Enter your message"/>
+ <div id ="userInput">
+    <input id ="textInput" type="text" name="userMessage" placeholder="Enter your message"/>
     <input id= "button" type="submit" value="Send"/>
 </div>
+
+<script>
+    // create a function to get user response
+
+    function getUserResponse(){
+
+     var userText = $('#textInput').val();
+     var userHTML = "<p class='userText'><span>"+userText+"<span></p>"
+     $('#textInput').val("");
+     $('#chatbot').append(userHTML);
+    document.getElementById("userInput").scrollIntoView({block:'start',behaviour:'smooth'});
+    $.get("/get",{userMessage:userText}).done(function(data){
+        var botHTML ="<p class='botText'><span>"+data+"<span></p>"
+        $('#chatbot').append(botHTML);
+
+    });
+
+    }
+    $("#textInput").keypress(function(e){
+        if(e.which ==13){
+            getUserResponse();
+        }
+    });
+
+    $('#button').click(function(){
+        getUserResponse();
+    });
+
+
+</script>
 </body>
 </html>
