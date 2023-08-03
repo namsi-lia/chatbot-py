@@ -15,7 +15,7 @@ body{
  #chatbot{
     margin-left:auto;
     margin-right:auto;
-    width:40%;
+    width:70%;
     margin-top:50px;
  }
  .botText{
@@ -33,15 +33,25 @@ body{
     margin-top:50px;
  }
  #textInput{
-    border-bottom:3px solid #657889;
+    border:3px solid white;
+    border-bottom:3px dotted #657889;
     font-family:monospace;
     font-size:16px;
+    width:80%;
+    padding:10px;
  }
  #button{
     padding:5px;
     font-family:monospace;
     background:#0f4bf1;
     font-size:16px;
+    padding:10px;
+    border:3px solid #0f4bf1;
+    border-raduis:10px;
+ }
+ .userText{
+    text-align:right;
+
  }
 
 </style>
@@ -65,12 +75,12 @@ body{
     function getUserResponse(){
 
      var userText = $('#textInput').val();
-     var userHTML = "<p class='userText'><span>"+userText+"<span></p>"
+     var userHTML = "<p class='userText'>User:<span>"+userText+"<span></p>"
      $('#textInput').val("");
      $('#chatbot').append(userHTML);
     document.getElementById("userInput").scrollIntoView({block:'start',behaviour:'smooth'});
     $.get("/get",{userMessage:userText}).done(function(data){
-        var botHTML ="<p class='botText'><span>"+data+"<span></p>"
+        var botHTML ="<p class='botText'>Botty:<span>"+data+"<span></p>"
         $('#chatbot').append(botHTML);
 
     });
