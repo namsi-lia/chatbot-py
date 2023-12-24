@@ -26,9 +26,9 @@ def main():
 
 
 
-#while True:
-    #user_response =input("User:")
-    #print("ChatBot:"+ str (bot.get_response(user_response)))
+while True:
+    user_response =input("User:")
+    print("ChatBot:"+ str (bot.get_response(user_response)))
 
 @app.route("/get")
 def get_chatbot_response():
